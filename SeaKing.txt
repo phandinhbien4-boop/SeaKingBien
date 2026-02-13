@@ -1,0 +1,125 @@
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "PHAN DINH BIEN",
+    SubTitle = "by Biendepzai",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = false,
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl
+})
+
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main Hub", Icon = "home" }),
+    SeaKing = Window:AddTab({ Title = "SeaKing", Icon = "star" })
+}
+
+Tabs.Main:AddParagraph({
+    Title = "SeaKing 2012",
+    Content = "Credit by SeaKing 2012"
+})
+
+Tabs.Main:AddButton({
+    Title = "Redz Hub",
+    Description = "Click to run Redz Hub script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/huy384/redzHub/refs/heads/main/redzHub.lua"))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Server Finder",
+    Description = "Click to run Server Finder script",
+    Callback = function()
+        loadstring(game:HttpGet("https://rise-evo.xyz/apiv3/ServerFinder.lua"))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Xeter hub V4",
+    Description = "Click to run Xeter hub V4 script",
+    Callback = function()
+        getgenv().Version = "V4"
+        getgenv().Team = "Marines"
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TlDinhKhoi/Xeter/refs/heads/main/Main.lua"))()
+    end
+})
+
+Tabs.SeaKing:AddButton({
+    Title = "QuanTum Hub",
+    Description = "Click to run QuanTum Hub script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()
+    end
+})
+
+Tabs.SeaKing:AddButton({
+    Title = "Bacon Hub",
+    Description = "Click to run Bacon Hub script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/vinh129150/hack/refs/heads/main/BaconHub.lua"))()
+    end
+})
+
+Tabs.SeaKing:AddButton({
+    Title = "Huylovemy / key : Huydepzai",
+    Description = "Click to run Huylovemy script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Bear-hud-t-h/refs/heads/main/Huylovevkmy"))()
+    end
+})
+
+Tabs.SeaKing:AddButton({
+    Title = "Blue X",
+    Description = "Click to run Blue X script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-BlueX/BlueX-Hub/refs/heads/main/Main.lua"))()
+    end
+})
+
+Tabs.SeaKing:AddButton({
+    Title = "Gravity Hub",
+    Description = "Click to run Gravity Hub script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()
+    end
+})
+
+Tabs.SeaKing:AddButton({
+    Title = "Turbo Fix Lag",
+    Description = "Click to run Turbo Fix Lag script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua"))()
+    end
+})
+
+local ScreenGui = Instance.new("ScreenGui")
+local ToggleButton = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+
+ScreenGui.Parent = game:GetService("CoreGui")
+ScreenGui.Name = "PhanDinhBienToggle"
+
+ToggleButton.Parent = ScreenGui
+ToggleButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ToggleButton.Size = UDim2.new(0, 50, 0, 50)
+ToggleButton.Position = UDim2.new(0, 20, 0.5, -25)
+ToggleButton.Text = "OFF"
+ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.Font = Enum.Font.GothamBold
+ToggleButton.TextSize = 14
+ToggleButton.Active = true
+ToggleButton.Draggable = true
+
+UICorner.CornerRadius = UDim.new(0, 12)
+UICorner.Parent = ToggleButton
+
+local IsOpen = true
+ToggleButton.MouseButton1Click:Connect(function()
+    IsOpen = not IsOpen
+    Window:Minimize()
+    ToggleButton.Text = IsOpen and "OFF" or "ON"
+end)
+
+Window:SelectTab(1)
