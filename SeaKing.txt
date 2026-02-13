@@ -4,7 +4,7 @@ local Window = Fluent:CreateWindow({
     Title = "PHAN DINH BIEN",
     SubTitle = "by Biendepzai",
     TabWidth = 160,
-    Size = UDim2.fromOffset(580, 460),
+    Size = UDim2.fromOffset(580, 420), -- Chỉnh kích thước chuẩn để dễ lướt
     Acrylic = false,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl
@@ -15,6 +15,7 @@ local Tabs = {
     SeaKing = Window:AddTab({ Title = "SeaKing", Icon = "star" })
 }
 
+-- Tab Main Hub
 Tabs.Main:AddParagraph({
     Title = "SeaKing 2012",
     Content = "Credit by SeaKing 2012"
@@ -46,6 +47,7 @@ Tabs.Main:AddButton({
     end
 })
 
+-- Tab SeaKing (Chứa nhiều nút để bạn kiểm tra khả năng lướt)
 Tabs.SeaKing:AddButton({
     Title = "QuanTum Hub",
     Description = "Click to run QuanTum Hub script",
@@ -94,6 +96,7 @@ Tabs.SeaKing:AddButton({
     end
 })
 
+-- Nút Toggle Menu cho Mobile
 local ScreenGui = Instance.new("ScreenGui")
 local ToggleButton = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
