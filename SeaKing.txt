@@ -13,7 +13,7 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
     Main = Window:AddTab({ Title = "Main Hub", Icon = "home" }),
     SeaKing = Window:AddTab({ Title = "SeaKing", Icon = "star" }),
-    Bien = Window:AddTab({ Title = "Biển", Icon = "rbxassetid://4483345998" })
+    Bien = Window:AddTab({ Title = "Biển", Icon = "http://www.roblox.com/asset/?id=87848255846860" })
 }
 
 Tabs.Main:AddParagraph({
@@ -96,31 +96,28 @@ Tabs.Bien:AddButton({
 })
 
 local ScreenGui = Instance.new("ScreenGui")
-local ToggleButton = Instance.new("TextButton")
+local ToggleButton = Instance.new("ImageButton") 
 local UICorner = Instance.new("UICorner")
 
 ScreenGui.Parent = game:GetService("CoreGui")
 ScreenGui.Name = "PhanDinhBienToggle"
 
 ToggleButton.Parent = ScreenGui
-ToggleButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-ToggleButton.Size = UDim2.new(0, 50, 0, 50)
-ToggleButton.Position = UDim2.new(0, 20, 0.5, -25)
-ToggleButton.Text = "OFF"
-ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-ToggleButton.Font = Enum.Font.GothamBold
-ToggleButton.TextSize = 14
+ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ToggleButton.BackgroundTransparency = 0.3
+ToggleButton.Size = UDim2.new(0, 60, 0, 60)
+ToggleButton.Position = UDim2.new(0, 20, 0.5, -30)
+ToggleButton.Image = "http://www.roblox.com/asset/?id=87848255846860" 
 ToggleButton.Active = true
 ToggleButton.Draggable = true
 
-UICorner.CornerRadius = UDim.new(0, 12)
+UICorner.CornerRadius = UDim.new(0, 15)
 UICorner.Parent = ToggleButton
 
 local IsOpen = true
 ToggleButton.MouseButton1Click:Connect(function()
     IsOpen = not IsOpen
     Window:Minimize()
-    ToggleButton.Text = IsOpen and "OFF" or "ON"
 end)
 
 Window:SelectTab(1)
