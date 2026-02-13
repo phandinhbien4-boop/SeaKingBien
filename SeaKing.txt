@@ -4,7 +4,7 @@ local Window = Fluent:CreateWindow({
     Title = "PHAN DINH BIEN",
     SubTitle = "by Biendepzai",
     TabWidth = 160,
-    Size = UDim2.fromOffset(580, 420), -- Chỉnh kích thước chuẩn để dễ lướt
+    Size = UDim2.fromOffset(580, 460),
     Acrylic = false,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl
@@ -12,10 +12,10 @@ local Window = Fluent:CreateWindow({
 
 local Tabs = {
     Main = Window:AddTab({ Title = "Main Hub", Icon = "home" }),
-    SeaKing = Window:AddTab({ Title = "SeaKing", Icon = "star" })
+    SeaKing = Window:AddTab({ Title = "SeaKing", Icon = "star" }),
+    Bien = Window:AddTab({ Title = "Biển", Icon = "user" })
 }
 
--- Tab Main Hub
 Tabs.Main:AddParagraph({
     Title = "SeaKing 2012",
     Content = "Credit by SeaKing 2012"
@@ -47,7 +47,6 @@ Tabs.Main:AddButton({
     end
 })
 
--- Tab SeaKing (Chứa nhiều nút để bạn kiểm tra khả năng lướt)
 Tabs.SeaKing:AddButton({
     Title = "QuanTum Hub",
     Description = "Click to run QuanTum Hub script",
@@ -72,7 +71,7 @@ Tabs.SeaKing:AddButton({
     end
 })
 
-Tabs.SeaKing:AddButton({
+Tabs.Bien:AddButton({
     Title = "Blue X",
     Description = "Click to run Blue X script",
     Callback = function()
@@ -80,7 +79,7 @@ Tabs.SeaKing:AddButton({
     end
 })
 
-Tabs.SeaKing:AddButton({
+Tabs.Bien:AddButton({
     Title = "Gravity Hub",
     Description = "Click to run Gravity Hub script",
     Callback = function()
@@ -88,7 +87,7 @@ Tabs.SeaKing:AddButton({
     end
 })
 
-Tabs.SeaKing:AddButton({
+Tabs.Bien:AddButton({
     Title = "Turbo Fix Lag",
     Description = "Click to run Turbo Fix Lag script",
     Callback = function()
@@ -96,7 +95,6 @@ Tabs.SeaKing:AddButton({
     end
 })
 
--- Nút Toggle Menu cho Mobile
 local ScreenGui = Instance.new("ScreenGui")
 local ToggleButton = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
