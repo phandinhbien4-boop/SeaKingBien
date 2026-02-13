@@ -13,7 +13,7 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
     Main = Window:AddTab({ Title = "Main Hub", Icon = "home" }),
     SeaKing = Window:AddTab({ Title = "SeaKing", Icon = "star" }),
-    Bien = Window:AddTab({ Title = "Biển", Icon = "user" })
+    Bien = Window:AddTab({ Title = "Biển", Icon = "rbxassetid://4483345998" })
 }
 
 Tabs.Main:AddParagraph({
